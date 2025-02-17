@@ -1,0 +1,29 @@
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+.nav-list:hover {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+.nav-list-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.nav-link {
+  color: rgb(183, 183, 183);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.nav-link:hover {
+  color: white;
+}
