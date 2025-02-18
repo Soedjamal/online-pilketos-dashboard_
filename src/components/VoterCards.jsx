@@ -52,11 +52,23 @@ const VoterCards = () => {
       }
     };
 
+
     fetchData();
   }, []);
 
   const handleExportExcel = () => {
-    exportTableToExcel("students_xii")
+    value === 0 ? exportTableToExcel("students_x") : value === 1 ? exportTableToExcel("students_xi") : value === 2 ? exportTableToExcel("students_xii") : exportTableToExcel("teacher_and_staff");
+    // if (value === 0) {
+
+    // }
+    // if (value === 1) {
+    //   exportTableToExcel("students_xi")
+    // }
+    // if (value === 2) {
+    //   exportTableToExcel("students_xii")
+    // } else {
+    //   exportTableToExcel("teacher_and_staff")
+    // }
   }
 
   const handlePrint = () => {
@@ -80,10 +92,10 @@ const VoterCards = () => {
       {/* Header hanya untuk tampilan web */}
       <Box sx={{ "@media print": { display: "none" } }}>
         <Tabs value={value} onChange={(e, newValue) => setValue(newValue)}>
-          <Tab label={`Siswa X (${xstudents.length})`} />
-          <Tab label={`Siswa XI (${xistudents.length})`} />
-          <Tab label={`Siswa XII (${xiistudents.length})`} />
-          <Tab label={`Guru dan Staff (${teacher.length})`} />
+          <Tab onClick={() => console.log(value)} sx={{ fontWeight: 700 }} label={`Siswa X (${xstudents.length})`} />
+          <Tab sx={{ fontWeight: 700 }} label={`Siswa XI (${xistudents.length})`} />
+          <Tab sx={{ fontWeight: 700 }} label={`Siswa XII (${xiistudents.length})`} />
+          <Tab sx={{ fontWeight: 700 }} label={`Guru dan Staff (${teacher.length})`} />
         </Tabs>
 
         <Button

@@ -9,6 +9,7 @@ import VotersXII from "./components/VotersXII";
 import VotersTS from "./components/VotersTS";
 
 function App() {
+  window.addEventListener("offline", () => alert("Maaf anda sedang offline"))
   return (
     <Router>
       <Navbar />

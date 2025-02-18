@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import "./styles/navbar.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAddressCard, faBars, faUserGroup, faUsers } from '@fortawesome/free-solid-svg-icons'
+import { faAddressCard, faBars, faChalkboardTeacher, faUserGroup, faUsers } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
     const [menu, setMenu] = useState(false)
@@ -10,14 +10,14 @@ const Navbar = () => {
     return (
         <>
             <FontAwesomeIcon style={{
-                position: "absolute",
+                position: "fixed",
                 top: "20",
                 left: "20"
             }} onClick={() => setMenu(!menu)} icon={faBars} />
 
             {menu ? <div style={{
                 transition: "all 0.5s ease",
-                position: "absolute",
+                position: "fixed",
                 padding: "20px 20px",
                 zIndex: "1000",
                 top: 0,
@@ -48,27 +48,27 @@ const Navbar = () => {
                             style={pathname === "/voter-cards" ? {
                                 backgroundColor: "rgb(48, 48, 48)"
                             } : {}}
-                            className='nav-list'> <FontAwesomeIcon icon={faAddressCard} /> <Link to="/voter-cards" className='nav-link'>Card Voters</Link></li>
+                            className='nav-list'> <FontAwesomeIcon icon={faAddressCard} /> <Link to="/voter-cards" className='nav-link'>Kartu Pemilih</Link></li>
                         <li
                             style={pathname === "/x-voters" ? {
                                 backgroundColor: "rgb(48, 48, 48)"
                             } : {}}
-                            className='nav-list'> <FontAwesomeIcon icon={faUsers} /> <Link to="/x-voters" className='nav-link'>Voters X</Link></li>
+                            className='nav-list'> <FontAwesomeIcon icon={faUsers} /> <Link to="/x-voters" className='nav-link'>Pemilih Kelas X</Link></li>
                         <li
                             style={pathname === "/xi-voters" ? {
                                 backgroundColor: "rgb(48, 48, 48)"
                             } : {}}
-                            className='nav-list'> <FontAwesomeIcon icon={faUsers} /> <Link to="/xi-voters" className='nav-link'>Voters XI</Link></li>
+                            className='nav-list'> <FontAwesomeIcon icon={faUsers} /> <Link to="/xi-voters" className='nav-link'>Pemilih Kelas XI</Link></li>
                         <li
                             style={pathname === "/xii-voters" ? {
                                 backgroundColor: "rgb(48, 48, 48)"
                             } : {}}
-                            className='nav-list'> <FontAwesomeIcon icon={faUsers} /> <Link to="/xii-voters" className='nav-link'>Voters XII</Link></li>
+                            className='nav-list'> <FontAwesomeIcon icon={faUsers} /> <Link to="/xii-voters" className='nav-link'>Pemilih Kelas XII</Link></li>
                         <li
                             style={pathname === "/ts-voters" ? {
                                 backgroundColor: "rgb(48, 48, 48)"
                             } : {}}
-                            className='nav-list'> <FontAwesomeIcon icon={faUsers} /> <Link to="/ts-voters" className='nav-link'>Voters Teacher & Staff</Link></li>
+                            className='nav-list'> <FontAwesomeIcon icon={faChalkboardTeacher} /> <Link to="/ts-voters" className='nav-link'>Pemilih Teacher & Staff</Link></li>
                     </ul>
                 </nav>
             </div> : <div style={{
