@@ -2,18 +2,22 @@ import React, { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import "./styles/navbar.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAddressCard, faBars, faChalkboardTeacher, faUserGroup, faUsers } from '@fortawesome/free-solid-svg-icons'
+import { faAddressCard, faBars, faChalkboardTeacher, faRefresh, faUserGroup, faUsers } from '@fortawesome/free-solid-svg-icons'
+import { Box, Typography } from '@mui/material'
 
-const Navbar = () => {
+
+const Navbar = ({ appBarTitle }) => {
     const [menu, setMenu] = useState(false)
     const { pathname } = useLocation()
     return (
         <>
-            <FontAwesomeIcon style={{
-                position: "fixed",
-                top: "20",
-                left: "20"
-            }} onClick={() => setMenu(!menu)} icon={faBars} />
+            <Box sx={{ position: 'fixed', p: "20px", bgcolor: "#202020", width: "100%", display: "flex", gap: 3, alignItems: "center", top: 0, zIndex: 1000 }}>
+                <FontAwesomeIcon style={{
+                    color: "#909090"
+                }} onClick={() => setMenu(!menu)} icon={faBars} />
+                <h2 style={{ color: "rgb(200,200,200)" }} className='head-title'>Dashboard</h2>
+
+            </Box>
 
             {menu ? <div style={{
                 transition: "all 0.5s ease",

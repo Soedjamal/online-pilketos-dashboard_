@@ -44,27 +44,27 @@ const VotersXII = () => {
 
   return (
     <Box sx={{ p: 3 }}>
-      <Tabs value={value} onChange={(e, newValue) => setValue(newValue)}>
-        <Tab sx={{ fontWeight: 700 }} label={`Telah Memilih (${votersTrue.length})`} />
-        <Tab sx={{ fontWeight: 700 }} label={`Belum Memilih (${votersFalse.length})`} />
-      </Tabs>
-
-      <Button
-        variant="contained"
-        color="success"
-        startIcon={<PrintIcon />}
-        onClick={handleExportExcel}
-        sx={{ mb: 2, ml: 2, mt: 2 }}
-      >
-        Cetak Excel
-      </Button>
-
-      {value === 0 ? <Typography sx={{ mt: 5 }} variant="h4" gutterBottom>
-        Data Telah Memilih
-      </Typography> : <Typography sx={{ mt: 5 }} variant="h4" gutterBottom>
+      {value === 0 ? <Typography sx={{ mt: 10 }} variant="h4" gutterBottom>
+        Data Pemilih Siswa Kelas XI
+      </Typography> : <Typography sx={{ mt: 10 }} variant="h4" gutterBottom>
         Data Belum Memilih
       </Typography>}
-      <TableContainer component={Paper}>
+
+      <Tabs sx={{ position: "relative", top: 10, py: 2 }} value={value} onChange={(e, newValue) => setValue(newValue)}>
+        <Tab sx={{ fontWeight: 700 }} label={`Telah Memilih (${votersTrue.length})`} />
+        <Tab sx={{ fontWeight: 700 }} label={`Belum Memilih (${votersFalse.length})`} />
+        <Button
+          variant="contained"
+          color="success"
+          startIcon={<PrintIcon />}
+          onClick={handleExportExcel}
+          sx={{ mb: 2, ml: 2, mt: 2, position: "absolute", top: -5, right: 0 }}
+        >
+          Cetak Excel
+        </Button>
+      </Tabs>
+
+      <TableContainer sx={{ mt: 2 }} component={Paper}>
         <Table>
           <TableHead>
             <TableRow>

@@ -13,10 +13,13 @@ import {
 } from "@mui/material";
 import { supabase } from "../lib/supabase";
 import { PieChart } from "@mui/x-charts";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRefresh } from "@fortawesome/free-solid-svg-icons";
 
 const Candidates = () => {
   const [candidates, setCandidates] = useState([]);
   const [xData, setXData] = useState([])
+  // const [fresh, setFresh] = useState(false)
   const [totalVotes, setTotalVotes] = useState(0);
 
   useEffect(() => {
@@ -47,9 +50,9 @@ const Candidates = () => {
 
 
 
-
   return (
     <>
+      {/* <FontAwesomeIcon style={{ color: "rgb(200,200,200)", position: "absolute", top: "30px", right: "40px", zIndex: "2000" }} onClick={() => setFresh(!fresh)} icon={faRefresh} /> */}
       <Box sx={{ p: 3 }}>
         <Typography variant="h4" gutterBottom>
           Hasil Pemilihan

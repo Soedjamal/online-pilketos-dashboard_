@@ -81,7 +81,7 @@ const VoterCards = () => {
 
   if (loading) {
     return (
-      <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
+      <Box sx={{ display: "flex", justifyContent: "center", minHeight: "100vh", alignItems: "center" }}>
         <CircularProgress />
       </Box>
     );
@@ -90,7 +90,7 @@ const VoterCards = () => {
   return (
     <Box sx={{ p: 2, "@media print": { p: 0 } }}>
       {/* Header hanya untuk tampilan web */}
-      <Box sx={{ "@media print": { display: "none" } }}>
+      <Box sx={{ mt: 10, "@media print": { display: "none" } }}>
         <Tabs value={value} onChange={(e, newValue) => setValue(newValue)}>
           <Tab onClick={() => console.log(value)} sx={{ fontWeight: 700 }} label={`Siswa X (${xstudents.length})`} />
           <Tab sx={{ fontWeight: 700 }} label={`Siswa XI (${xistudents.length})`} />
