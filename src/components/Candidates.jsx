@@ -53,7 +53,7 @@ const Candidates = () => {
   return (
     <>
       {/* <FontAwesomeIcon style={{ color: "rgb(200,200,200)", position: "absolute", top: "30px", right: "40px", zIndex: "2000" }} onClick={() => setFresh(!fresh)} icon={faRefresh} /> */}
-      <Box sx={{ p: 3 }}>
+      <Box sx={{ p: 3, mt: 10 }}>
         <Typography variant="h4" gutterBottom>
           Hasil Pemilihan
         </Typography>

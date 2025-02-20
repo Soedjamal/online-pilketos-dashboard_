@@ -82,7 +82,7 @@ const VotersXII = () => {
             borderRadius: "10px",
             position: "relative",
             p: "20px",
-            mt: "30%",
+            mt: "10%",
             mx: "auto",
             width: "300px",
             height: "150px",
