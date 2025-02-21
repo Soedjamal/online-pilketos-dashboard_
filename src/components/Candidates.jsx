@@ -12,9 +12,12 @@ import {
   TableRow,
   Container,
   useMediaQuery,
+  Button,
 } from "@mui/material";
 import { supabase } from "../lib/supabase";
 import { BarChart, PieChart } from "@mui/x-charts";
+import PrintIcon from "@mui/icons-material/Print";
+import { exportCandidatesToExcel } from "../utils/exportCandidatesToExcel";
 
 
 const Candidates = () => {
@@ -87,12 +90,25 @@ const Candidates = () => {
     tsData["2"]
   ];
 
+  const handlePrintExcel = () => {
+    exportCandidatesToExcel(candidates, totalVotes)
+  }
+
 
   return (
-    <Box sx={{ p: { xs: 2, md: 3 }, mt: { xs: 5, md: 10 } }}>
+    <Box sx={{ p: { xs: 1, md: 3 }, mt: { xs: 10, md: 10 } }}>
       <Typography variant={isSmallScreen ? "h5" : "h4"} gutterBottom align="start">
         Hasil Pemilihan
       </Typography>
+      <Button
+        variant="contained"
+        color="success"
+        startIcon={<PrintIcon />}
+        onClick={handlePrintExcel}
+        sx={{}}
+      >
+        Cetak Excel
+      </Button>
 
       {/* Table Responsive */}
       <TableContainer component={Paper} sx={{ overflowX: "auto" }}>
